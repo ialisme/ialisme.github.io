@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div class="panel">
+  <header class="post-header">
+    <span class="breadcrumbs">
+      <a href="https://soc.ialis.me">soc.ialis.me</a> / <a href="/blog/">blog</a> /
+      {% if page.categories %}<a href="/blog/{{page.categories}}/">{{ page.categories }}</a>{% endif %}
+    </span>
+    <h2 class="post-title" itemprop="name headline">{{ page.title }}</h2>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+      {% if page.categories %}
+      • <a href="/blog/{{page.categories}}/">{{ page.categories }}</a>
+      {% endif %}
+      {% if page.author %}
+        <span class="author"> • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        by <a href="{{ page.author_link }}"><span itemprop="name">{{ page.author }}</span></a></span>
+      </span>
+      {% else %}
+        <span class="author"> • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        by <a href="https://soc.ialis.me/@admin"><span itemprop="name">the soc.ialis.me collective</span></a></span>
+      </span>
+      {% endif %}
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+</div>

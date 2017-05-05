@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <span class="breadcrumbs"><a href="https://soc.ialis.me">soc.ialis.me</a> / <a href="/blog/">blog</a> /</span>
+  <h2 class="page-heading">{{page.category}}</h2>
+
+  {% unless page.content == '' %}
+    <p>{{ page.content }}</p>
+  {% endunless %}
+
+  <ul class="post-list">
+    {% for post in site.categories[page.category] %}
+      <li>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">
+          {{ post.date | date: date_format }}
+          {% if post.categories %}
+          • <a href="/blog/{{post.categories}}/">{{ post.categories }}</a>
+          {% endif %}
+        </span>
+
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+

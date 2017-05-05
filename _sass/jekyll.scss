@@ -1,0 +1,48 @@
+.panel .emblem {
+  text-align: center;
+}
+
+span.breadcrumbs a {
+  color: #dd0808;
+}
+
+strong {
+  font-weight: bold;
+}
+i {
+  font-style: italic;
+}
+
+.panel .emblem img {
+  width: 180px;
+  height: 180px;
+  padding-left: 10px;
+}
+
+.panel .contact-email, .contact-fediverse {
+  margin-top: 0;
+  text-align: center;
+  a {
+    color: rgba(221, 215, 215, 0.7);
+  }
+}
+.panel .contact-email {
+  margin-top: 20px;
+}
+
+.panel .panel-body p {
+  font-size: 95%;
+  word-wrap: break-word;
+  text-align: justify;
+}
+
+// Posts
+
+header.post-header {
+  p.post-meta {
+    span.author {
+      font-size: 90%
+    }
+  }
+}
+
